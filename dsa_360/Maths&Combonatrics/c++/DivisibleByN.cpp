@@ -3,10 +3,10 @@ using namespace std;
 
 class Solution {
 public:
-    bool isDivisible(string s){
+    bool isDivisible(string s,int n){
         int rem=0;
         for(char c:s){
-            rem=(rem*10+(c-'0'))%13;
+            rem=(rem*10+(c-'0'))%n;
         }
         return rem==0;
     }
@@ -14,10 +14,14 @@ public:
 
 int main()
 {
-    string n;
+    string s;
+    int n;
+    cout<<"Enter Number(Dividend) : ";
+    cin>>s;
+    cout<<"Enter Number (Divisor ) : ";
     cin>>n;
     Solution obj;
-    if(obj.isDivisible(n)){
+    if(obj.isDivisible(s,n)){
         cout<<"Divisible";
     }else{
         cout<<"Not Divisible";
